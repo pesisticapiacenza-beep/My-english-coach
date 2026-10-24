@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b63">
+  <meta name="description" content="My English Coach: il tuo percorso personale di inglese da A1 ad A2.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <title>My English Coach</title>
+  <style>
+    :root{--navy:#173b63;--blue:#2869a8;--sky:#eaf3fb;--gold:#f2bd55;--ink:#1d2938;--muted:#667487;--paper:#f5f7fa;--white:#fff;--green:#247a55;--red:#b43d3d;--border:#dce4ec;--shadow:0 8px 26px rgba(23,59,99,.08)}
+    *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button,input,textarea{font:inherit} button{cursor:pointer}
+    .top{background:linear-gradient(120deg,var(--navy),#235d91);color:#fff;padding:22px max(18px,calc((100% - 1100px)/2));}
+    .brand{display:flex;align-items:center;gap:12px}.logo{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:#fff;color:var(--navy);font-size:25px;font-weight:800}
+    h1{font-size:clamp(1.4rem,3vw,2rem);margin:0}.subtitle{margin:4px 0 0;color:#dbe9f7}
+    .wrap{max-width:1100px;margin:22px auto;padding:0 16px 48px}
+    .nav{display:flex;gap:8px;overflow-x:auto;padding:0 0 14px}.nav button{white-space:nowrap;border:1px solid var(--border);background:#fff;border-radius:999px;padding:10px 15px;color:var(--navy);font-weight:650}.nav button.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--shadow)}.span8{grid-column:span 8}.span4{grid-column:span 4}.span12{grid-column:span 12}
+    .eyebrow{color:var(--blue);font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.07em}.muted{color:var(--muted)}h2{font-size:1.25rem;margin:5px 0 12px}h3{font-size:1.03rem;margin:0 0 8px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{background:var(--sky);border-radius:13px;padding:14px}.stat strong{display:block;font-size:1.45rem;color:var(--navy)}.stat span{font-size:.85rem;color:var(--muted)}
+    .progress{height:10px;background:#e6edf4;border-radius:99px;overflow:hidden;margin:12px 0}.progress div{height:100%;background:linear-gradient(90deg,#2869a8,#4ba77b);width:0%;transition:width .2s}
+    .btn{border:0;border-radius:11px;padding:11px 15px;font-weight:750;background:var(--navy);color:#fff}.btn.secondary{background:var(--sky);color:var(--navy);border:1px solid #cfe0ef}.btn.gold{background:var(--gold);color:#35280e}.btn.danger{background:#fff0f0;color:var(--red);border:1px solid #f1cccc}.btn:disabled{opacity:.45;cursor:not-allowed}
+    .lesson-list{display:grid;gap:10px}.lesson-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px;border:1px solid var(--border);border-radius:13px}.lesson-row p{margin:3px 0 0;font-size:.9rem;color:var(--muted)}.badge{font-size:.78rem;font-weight:750;padding:4px 9px;border-radius:999px;background:#edf1f5;color:#596779;white-space:nowrap}.badge.done{background:#e2f4eb;color:var(--green)}.badge.current{background:#fff3d8;color:#805b11}
+    .lesson-body{max-width:780px}.example{padding:12px 14px;background:#f0f6fc;border-left:4px solid var(--blue);border-radius:8px;margin:10px 0}.en{font-weight:750;font-size:1.05rem}.answer{display:block;width:100%;max-width:540px;padding:12px;border:1px solid #cbd7e3;border-radius:10px;margin:10px 0;background:#fff}.feedback{margin:12px 0;padding:12px;border-radius:10px}.feedback.good{background:#e5f6ed;color:#175d3f}.feedback.bad{background:#fff0ed;color:#8c3025}
+    .choices{display:grid;gap:8px;margin:12px 0}.choice{border:1px solid var(--border);background:#fff;border-radius:10px;text-align:left;padding:12px}.choice:hover{border-color:var(--blue);background:#f5faff}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.chip{border:1px solid #cbd7e3;background:#fff;border-radius:9px;padding:9px 12px}.chip:disabled{opacity:.5}.sentence{padding:14px;border:1px dashed #a8bdd1;border-radius:12px;min-height:52px;background:#f8fbfe}
+    .notice{background:#fff8e8;border:1px solid #f2dfac;padding:13px 15px;border-radius:12px;color:#6d5319}.field{display:block;width:100%;max-width:600px;padding:11px;border:1px solid var(--border);border-radius:10px;margin:8px 0 14px}
+    .footer{font-size:.85rem;color:var(--muted);margin-top:24px}.hide{display:none!important}
+    @media(max-width:760px){.span8,.span4{grid-column:span 12}.stats{grid-template-columns:repeat(3,1fr)}.card{padding:16px}.lesson-row{align-items:flex-start}.lesson-row .btn{padding:9px 11px}}
+  </style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="logo">M</div><div><h1>My English Coach</h1><p class="subtitle">Il tuo percorso personale dall'A1 all'A2</p></div></div>
+</header>
+<main class="wrap">
+  <nav class="nav" aria-label="Menu principale">
+    <button class="active" data-view="home">🏠 Home</button>
+    <button data-view="lessons">📚 Lezioni</button>
+    <button data-view="vocab">🧠 Vocabolario</button>
+    <button data-view="progress">📈 Progressi</button>
+    <button data-view="backup">💾 Backup</button>
+  </nav>
+  <section id="app"></section>
+  <p class="footer">Versione iniziale gratuita · I progressi sono salvati in questo browser su questo dispositivo. Esporta regolarmente una copia di sicurezza.</p>
+</main>
+<script>
+const KEY = "myEnglishCoach_v1";
+const lessons = [
+ {id:"a1-01",level:"A1",title:"Le prime frasi: I am / You are",goal:"Presentarti e dire chi sei.",grammar:"Il verbo to be significa essere. Cambia in base al soggetto: I am, you are, he/she/it is, we are, they are.",examples:[["I am Marco.","Io sono Marco."],["You are happy.","Tu sei felice."],["She is at home.","Lei è a casa."]],tip:"In inglese il pronome soggetto normalmente non si omette: si dice “I am”, non soltanto “am”.",exercise:{type:"fill",q:"Completa: I ___ Marco.",answers:["am"],explain:"Con I si usa am: I am Marco."}},
+ {id:"a1-02",level:"A1",title:"Frasi negative con to be",goal:"Dire che qualcosa non è vero.",grammar:"Per la forma negativa aggiungi not dopo il verbo: I am not, you are not, he is not. Le forme contratte sono I'm not, aren't e isn't.",examples:[["I am not tired.","Non sono stanco."],["He isn't at work.","Lui non è al lavoro."],["They aren't ready.","Loro non sono pronti."]],tip:"La forma contratta è molto comune nel parlato. Impara prima la forma completa, poi riconosci quella contratta.",exercise:{type:"fill",q:"Completa: She ___ not tired.",answers:["is"],explain:"Con she si usa is: She is not tired."}},
+ {id:"a1-03",level:"A1",title:"Costruire una frase",goal:"Mettere le parole nell'ordine corretto.",grammar:"La struttura di base è spesso soggetto + verbo + complemento. L'ordine delle parole in inglese è importante.",examples:[["I like coffee.","Mi piace il caffè."],["We play football.","Giochiamo a calcio."],["They live in Italy.","Vivono in Italia."]],tip:"Nelle frasi semplici, inizia chiedendoti: chi? (soggetto), fa cosa? (verbo), che cosa/dove? (complemento).",exercise:{type:"order",q:"Riordina le parole per formare: «Mi piace la pizza».",words:["pizza","like","I"],answer:"I like pizza",explain:"L'ordine corretto è soggetto + verbo + complemento: I like pizza."}},
+ {id:"a1-04",level:"A1",title:"Completare con am / is / are",goal:"Scegliere la forma corretta di to be.",grammar:"I am; he/she/it is; you/we/they are. Il nome singolare usa is, il plurale usa are.",examples:[["My friends are here.","I miei amici sono qui."],["The shop is open.","Il negozio è aperto."],["We are ready.","Siamo pronti."]],tip:"Friends è plurale, quindi si usa are. Shop è singolare, quindi si usa is.",exercise:{type:"choice",q:"Scegli la frase corretta.",options:["They is happy.","They are happy.","They am happy."],answer:"They are happy.",explain:"Con they si usa are."}},
+ {id:"a1-05",level:"A1",title:"Vocabolario: vita quotidiana",goal:"Imparare parole comuni e usarle in una frase.",grammar:"Memorizza il vocabolo insieme a una frase breve, non come parola isolata.",examples:[["home","casa"],["work","lavoro"],["water","acqua"],["food","cibo"],["today","oggi"]],tip:"Prova a dire una frase semplice con una parola nuova: “I am at home.”",exercise:{type:"fill",q:"Come si dice «acqua» in inglese?",answers:["water"],explain:"Water significa acqua."}}
+];
+const initial = {completed:[],scores:{},mistakes:[],vocab:[],notes:"",streak:0,lastStudyDate:null,points:0};
+let state = loadState();
+let currentView = "home";
+let activeLesson = null;
+let exerciseState = {};
+function loadState(){try{return {...structuredClone(initial),...JSON.parse(localStorage.getItem(KEY)||"{}")}}catch(e){return {...initial}}}
+function saveState(){localStorage.setItem(KEY,JSON.stringify(state));}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function progressPct(){return Math.round(state.completed.length/lessons.length*100)}
+function markStudy(){const d=new Date().toISOString().slice(0,10);if(state.lastStudyDate!==d){state.streak=state.lastStudyDate===new Date(Date.now()-86400000).toISOString().slice(0,10)?(state.streak||0)+1:1;state.lastStudyDate=d}}
+function render(){
+ document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===currentView));
+ const root=document.getElementById("app");
+ if(activeLesson){root.innerHTML=lessonHTML(activeLesson);return}
+ if(currentView==="home") root.innerHTML=homeHTML();
+ else if(currentView==="lessons") root.innerHTML=lessonsHTML();
+ else if(currentView==="vocab") root.innerHTML=vocabHTML();
+ else if(currentView==="progress") root.innerHTML=progressHTML();
+ else root.innerHTML=backupHTML();
+}
+function homeHTML(){
+ const next=lessons.find(l=>!state.completed.includes(l.id))||lessons[lessons.length-1];
+ return `<div class="grid">
+ <article class="card span8"><div class="eyebrow">Bentornato</div><h2>Un piccolo passo alla volta 🇬🇧</h2><p>Studia con calma, fai pratica e torna sugli argomenti che vuoi consolidare. Le lezioni complete saranno ampliate progressivamente.</p>
+ <div class="progress"><div style="width:${progressPct()}%"></div></div><p class="muted">${state.completed.length} di ${lessons.length} lezioni demo completate · ${progressPct()}%</p>
+ <button class="btn" onclick="openLesson('${next.id}')">${state.completed.includes(next.id)?"Riprendi una lezione":"Continua il percorso"} →</button></article>
+ <article class="card span4"><div class="eyebrow">Il tuo percorso</div><h2>Livello A1</h2><div class="stats"><div class="stat"><strong>${state.points}</strong><span>Punti</span></div><div class="stat"><strong>${state.streak||0}</strong><span>Giorni</span></div><div class="stat"><strong>${state.mistakes.length}</strong><span>Errori</span></div></div><p class="muted">I punti e i progressi sono salvati su questo browser.</p></article>
+ <article class="card span12"><div class="eyebrow">Ripasso consigliato</div><h2>Rivedi gli errori</h2>${state.mistakes.length?`<p>Hai ${state.mistakes.length} errore/i registrato/i. Torna sulle lezioni associate e prova di nuovo.</p><button class="btn secondary" onclick="setView('progress')">Vai ai progressi</button>`:`<p class="muted">Quando sbaglierai un esercizio, l'app lo registrerà qui per aiutarti a ripassare.</p>`}</article>
+ <article class="card span12"><div class="notice"><strong>Nota sulla versione iniziale:</strong> questa è una base funzionante con lezioni dimostrative. Il percorso completo A1-A2, l'audio e le funzioni avanzate verranno sviluppati in fasi successive, senza introdurre servizi a pagamento.</div></article>
+ </div>`;
+}
+function lessonsHTML(){return `<article class="card"><div class="eyebrow">Percorso didattico</div><h2>Lezioni disponibili</h2><p class="muted">Completa le lezioni nell'ordine consigliato. Questa versione contiene le prime lezioni dimostrative.</p><div class="lesson-list">${lessons.map((l,i)=>`<div class="lesson-row"><div><strong>${i+1}. ${esc(l.title)}</strong><p>${esc(l.goal)}</p></div><div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end"><span class="badge ${state.completed.includes(l.id)?"done":i===state.completed.length?"current":""}">${state.completed.includes(l.id)?"Completata":i===state.completed.length?"Prossima":"Da fare"}</span><button class="btn secondary" onclick="openLesson('${l.id}')">Apri</button></div></div>`).join("")}</div></article>`}
+function lessonHTML(l){
+ let ex=l.exercise;
+ let exercise=`<div class="card" style="margin-top:18px"><div class="eyebrow">Esercizio</div><h2>${esc(ex.q)}</h2>`;
+ if(ex.type==="fill") exercise+=`<form onsubmit="checkFill(event,'${l.id}')"><label for="answer">La tua risposta</label><input class="answer" id="answer" autocomplete="off" required><button class="btn">Controlla</button></form>`;
+ if(ex.type==="choice") exercise+=`<div class="choices">${ex.options.map((o,i)=>`<button class="choice" onclick="checkChoice('${l.id}',${i})">${esc(o)}</button>`).join("")}</div>`;
+ if(ex.type==="order") exercise+=`<p class="muted">Tocca le parole nell'ordine corretto.</p><div id="sentence" class="sentence" aria-live="polite"></div><div class="chips">${ex.words.map((w,i)=>`<button class="chip" id="word${i}" onclick="addWord('${l.id}',${i})">${esc(w)}</button>`).join("")}</div><button class="btn" onclick="checkOrder('${l.id}')">Controlla frase</button> <button class="btn secondary" onclick="resetOrder('${l.id}')">Ricomincia</button>`;
+ exercise+=`<div id="feedback" aria-live="polite"></div></div>`;
+ return `<article class="card lesson-body"><button class="btn secondary" onclick="closeLesson()">← Torna alle lezioni</button><p class="eyebrow" style="margin-top:18px">${l.level} · Lezione</p><h2>${esc(l.title)}</h2><p>${esc(l.goal)}</p><h3>Spiegazione</h3><p>${esc(l.grammar)}</p><h3>Esempi</h3>${l.examples.map(e=>`<div class="example"><div class="en">${esc(e[0])}</div><div>${esc(e[1])}</div></div>`).join("")}<div class="notice"><strong>Ricorda:</strong> ${esc(l.tip)}</div>${exercise}<div style="margin-top:16px"><button class="btn secondary" onclick="closeLesson()">Esci dalla lezione</button></div></article>`;
+}
+function vocabHTML(){const words=[["hello","ciao"],["please","per favore"],["thank you","grazie"],["home","casa"],["work","lavoro"],["water","acqua"],["food","cibo"],["today","oggi"],["happy","felice"],["ready","pronto/a"]];return `<article class="card"><div class="eyebrow">Vocabolario personale</div><h2>Parole utili</h2><p class="muted">Aggiungi parole al tuo archivio e usa la traduzione per ripassare.</p><form onsubmit="addVocab(event)"><label for="word">Parola o espressione in inglese</label><input id="word" class="field" required placeholder="es. good morning"><label for="meaning">Significato in italiano</label><input id="meaning" class="field" required placeholder="es. buongiorno"><button class="btn">Aggiungi parola</button></form><h3 style="margin-top:24px">Parole salvate (${state.vocab.length})</h3>${state.vocab.length?`<div class="lesson-list">${state.vocab.map((v,i)=>`<div class="lesson-row"><div><strong>${esc(v.word)}</strong><p>${esc(v.meaning)}</p></div><button class="btn danger" onclick="deleteVocab(${i})">Elimina</button></div>`).join("")}</div>`:`<p class="muted">Non hai ancora aggiunto parole. Puoi iniziare con gli esempi qui sotto.</p>`}<h3 style="margin-top:24px">Vocabolario iniziale</h3><div class="lesson-list">${words.map(w=>`<div class="lesson-row"><div><strong>${esc(w[0])}</strong><p>${esc(w[1])}</p></div><button class="btn secondary" onclick="saveWord('${w[0].replace(/'/g,"\\'")}','${w[1].replace(/'/g,"\\'")}')">Salva</button></div>`).join("")}</div></article>`}
+function progressHTML(){let err=state.mistakes.slice(-10).reverse();return `<div class="grid"><article class="card span12"><div class="eyebrow">Il tuo andamento</div><h2>Progressi</h2><div class="progress"><div style="width:${progressPct()}%"></div></div><p><strong>${progressPct()}%</strong> delle lezioni dimostrative completate.</p><div class="stats"><div class="stat"><strong>${state.completed.length}</strong><span>Lezioni completate</span></div><div class="stat"><strong>${state.points}</strong><span>Punti esperienza</span></div><div class="stat"><strong>${state.streak||0}</strong><span>Giorni consecutivi</span></div></div></article><article class="card span12"><h2>Errori da ripassare</h2>${err.length?`<div class="lesson-list">${err.map(e=>`<div class="lesson-row"><div><strong>${esc(e.lessonTitle)}</strong><p>Domanda: ${esc(e.question)}<br>Risposta data: ${esc(e.given||"—")} · Risposta corretta: ${esc(e.correct)}</p></div></div>`).join("")}</div>`:`<p class="muted">Nessun errore registrato. Gli errori degli esercizi appariranno qui.</p>`}</article><article class="card span12"><h2>Appunti personali</h2><p class="muted">Scrivi una nota da ricordare. Verrà salvata in questo browser.</p><textarea class="field" rows="4" oninput="saveNotes(this.value)" placeholder="Es. Ricordarmi: I am, you are, he is...">${esc(state.notes||"")}</textarea></article></div>`}
+function backupHTML(){return `<article class="card"><div class="eyebrow">I tuoi dati</div><h2>Backup e ripristino</h2><p>Esporta una copia dei progressi e conservala in un luogo sicuro. Per ripristinarla, usa il file JSON precedentemente esportato.</p><button class="btn" onclick="exportBackup()">Esporta backup JSON</button><h3 style="margin-top:26px">Ripristina un backup</h3><p class="muted">Il ripristino sostituirà i progressi presenti in questo browser.</p><input class="field" type="file" id="backupFile" accept=".json,application/json"><button class="btn secondary" onclick="importBackup()">Importa backup</button><div id="backupFeedback" aria-live="polite"></div><div class="notice" style="margin-top:22px"><strong>Privacy:</strong> questa versione salva i dati localmente nel browser e non crea un account né invia i progressi a un server.</div></article>`}
+function setView(v){currentView=v;activeLesson=null;render()}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>setView(b.dataset.view)));
+function openLesson(id){activeLesson=lessons.find(l=>l.id===id);exerciseState={};render()}
+function closeLesson(){activeLesson=null;currentView="lessons";render()}
+function showFeedback(ok,msg){const el=document.getElementById("feedback");if(el)el.innerHTML=`<div class="feedback ${ok?"good":"bad"}">${msg}</div>`}
+function recordMistake(l,given,correct){state.mistakes.push({lessonId:l.id,lessonTitle:l.title,question:l.exercise.q,given:String(given),correct:String(correct),date:new Date().toISOString()});saveState()}
+function completeExercise(l,ok,given,correct,explain){if(ok){if(!state.completed.includes(l.id)){state.completed.push(l.id);state.points+=10;markStudy()}state.scores[l.id]=(state.scores[l.id]||0)+1;saveState();showFeedback(true,`<strong>Bravo!</strong> ${esc(explain)}<br><br><button class="btn gold" onclick="closeLesson()">Lezione completata · +10 punti</button>`)}else{recordMistake(l,given,correct);saveState();showFeedback(false,`<strong>Non ancora.</strong> ${esc(explain)}<br>Risposta corretta: <strong>${esc(correct)}</strong>. Riprova e cerca di ricordare la regola.`)}}
+function checkFill(ev,id){ev.preventDefault();const l=lessons.find(x=>x.id===id);const v=document.getElementById("answer").value.trim().toLowerCase().replace(/[.!?]/g,"");const ok=l.exercise.answers.some(a=>a.toLowerCase()===v);completeExercise(l,ok,v,l.exercise.answers[0],l.exercise.explain)}
+function checkChoice(id,i){const l=lessons.find(x=>x.id===id);const v=l.exercise.options[i];completeExercise(l,v===l.exercise.answer,v,l.exercise.answer,l.exercise.explain)}
+function addWord(id,i){const l=lessons.find(x=>x.id===id);exerciseState.words=exerciseState.words||[];if(exerciseState.words.includes(i))return;exerciseState.words.push(i);document.getElementById("word"+i).disabled=true;document.getElementById("sentence").textContent=exerciseState.words.map(j=>l.exercise.words[j]).join(" ")}
+function resetOrder(id){exerciseState.words=[];render()}
+function checkOrder(id){const l=lessons.find(x=>x.id===id);const v=(exerciseState.words||[]).map(j=>l.exercise.words[j]).join(" ");completeExercise(l,v===l.exercise.answer,v,l.exercise.answer,l.exercise.explain)}
+function addVocab(ev){ev.preventDefault();const word=document.getElementById("word").value.trim(),meaning=document.getElementById("meaning").value.trim();if(!word||!meaning)return;state.vocab.push({word,meaning});saveState();render()}
+function saveWord(word,meaning){if(!state.vocab.some(v=>v.word.toLowerCase()===word.toLowerCase()))state.vocab.push({word,meaning});saveState();render()}
+function deleteVocab(i){state.vocab.splice(i,1);saveState();render()}
+function saveNotes(v){state.notes=v;saveState()}
+function exportBackup(){const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="my-english-coach-backup.json";a.click();URL.revokeObjectURL(a.href)}
+function importBackup(){const f=document.getElementById("backupFile").files[0];const out=document.getElementById("backupFeedback");if(!f){out.innerHTML='<div class="feedback bad">Seleziona prima un file JSON.</div>';return}const r=new FileReader();r.onload=()=>{try{const data=JSON.parse(r.result);if(!Array.isArray(data.completed)||!Array.isArray(data.mistakes))throw new Error("Formato non valido");state={...structuredClone(initial),...data};saveState();out.innerHTML='<div class="feedback good">Backup ripristinato correttamente.</div>';render()}catch(e){out.innerHTML='<div class="feedback bad">Il file non sembra un backup valido di My English Coach.</div>'}};r.readAsText(f)}
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}))}
+render();
+</script>
+</body>
+</html>
