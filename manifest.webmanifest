@@ -1,17 +1,1 @@
-{
-  "name": "My English Coach",
-  "short_name": "English Coach",
-  "description": "Il tuo percorso personale di inglese dall'A1 all'A2",
-  "start_url": "./",
-  "display": "standalone",
-  "background_color": "#f5f7fa",
-  "theme_color": "#173b63",
-  "icons": [
-    {
-      "src": "icons/icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
-}
+{"name":"My English Coach","short_name":"English Coach","start_url":"./","display":"standalone","background_color":"#f4f6fb","theme_color":"#2457a7","icons":[{"src":"icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
