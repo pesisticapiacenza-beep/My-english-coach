@@ -1,13 +1,27 @@
-MY ENGLISH COACH — VERSIONE 2
+MY ENGLISH COACH - VERSIONE 3
+App gratuita in italiano per studiare inglese A1-A2.
 
-Contiene: app HTML, 8 lezioni A1 e 2 A2, quiz con correzione, parole e flashcard, grammatica rapida, test iniziale, registro errori, punti, appunti e backup JSON.
+FILE:
+- index.html: applicazione
+- manifest.webmanifest: impostazioni installazione
+- service-worker.js: supporto PWA di base
+- icons/icon.svg: icona
 
-AGGIORNAMENTO GITHUB PAGES
-1. Estrai lo ZIP.
-2. Apri https://github.com/pesisticapiacenza-beep/My-english-coach
-3. Scegli Add file > Upload files.
-4. Carica il contenuto dello ZIP nella cartella principale del repository (non la cartella contenitore).
-5. Premi Commit changes e attendi il deploy.
-6. Sito: https://pesisticapiacenza-beep.github.io/My-english-coach/
+NOVITÀ:
+- Percorso con suggerimento della prima lezione non ancora superata
+- Sezione Ripasso smart con gli errori recenti, risposte corrette e spiegazioni
+- Corretto il criterio di superamento delle lezioni da 3 domande: almeno 2 risposte corrette
+- Conserva vocaboli, appunti, punti e backup locale
 
-IMPORTANTE: i progressi sono salvati localmente nel browser. Esporta un backup prima di cambiare versione. Questa versione iniziale non include audio automatico, riconoscimento vocale o sincronizzazione online.
+COME AGGIORNARE GITHUB PAGES:
+1. Prima di tutto, apri l'app attuale e vai in Backup > Esporta backup per salvare i progressi.
+2. Estrai questo ZIP.
+3. Apri il repository GitHub del progetto.
+4. Seleziona Add file > Upload files.
+5. Carica i file contenuti in questa cartella nella cartella principale del repository (non la cartella esterna).
+6. Premi Commit changes.
+7. Controlla che GitHub Actions finisca con la spunta verde.
+8. Riapri il sito e, se necessario, aggiorna la pagina.
+
+NOTA:
+I progressi sono salvati nel browser del dispositivo. Prima degli aggiornamenti è consigliato esportare il backup. Non sono inclusi audio automatico, riconoscimento vocale o sincronizzazione online.
