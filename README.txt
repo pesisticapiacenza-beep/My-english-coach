@@ -1,27 +1,20 @@
-MY ENGLISH COACH - VERSIONE 3
+MY ENGLISH COACH - VERSIONE 4
+
 App gratuita in italiano per studiare inglese A1-A2.
 
-FILE:
-- index.html: applicazione
-- manifest.webmanifest: impostazioni installazione
-- service-worker.js: supporto PWA di base
-- icons/icon.svg: icona
+NOVITÀ DELLA VERSIONE 4:
+- Aggiunte le lezioni 11-15: HAVE GOT; aggettivi possessivi; avverbi di frequenza; preposizioni di luogo e tempo; SOME/ANY e quantità.
+- Ogni nuova lezione contiene 5 domande con correzione e spiegazione.
+- Il punteggio è calcolato in modo proporzionale al numero di domande: si supera con almeno due terzi di risposte corrette.
+- Aggiornata la cache offline per forzare il caricamento della versione 4.
+- Conservata la chiave di salvataggio locale mec_v2: i progressi già presenti sullo stesso browser dovrebbero rimanere disponibili.
 
-NOVITÀ:
-- Percorso con suggerimento della prima lezione non ancora superata
-- Sezione Ripasso smart con gli errori recenti, risposte corrette e spiegazioni
-- Corretto il criterio di superamento delle lezioni da 3 domande: almeno 2 risposte corrette
-- Conserva vocaboli, appunti, punti e backup locale
-
-COME AGGIORNARE GITHUB PAGES:
-1. Prima di tutto, apri l'app attuale e vai in Backup > Esporta backup per salvare i progressi.
+AGGIORNAMENTO GITHUB PAGES:
+1. Prima di aggiornare, apri l'app attuale > Backup > Esporta backup.
 2. Estrai questo ZIP.
-3. Apri il repository GitHub del progetto.
-4. Seleziona Add file > Upload files.
-5. Carica i file contenuti in questa cartella nella cartella principale del repository (non la cartella esterna).
-6. Premi Commit changes.
-7. Controlla che GitHub Actions finisca con la spunta verde.
-8. Riapri il sito e, se necessario, aggiorna la pagina.
+3. Carica su GitHub i file e le cartelle contenuti nello ZIP nella cartella principale del repository, sovrascrivendo i file omonimi. Non creare una cartella esterna aggiuntiva.
+4. Esegui Commit changes e attendi la spunta verde in Actions.
+5. Riapri il sito e aggiorna la pagina. Se il browser mostra ancora la vecchia versione, chiudi e riapri la scheda.
 
-NOTA:
-I progressi sono salvati nel browser del dispositivo. Prima degli aggiornamenti è consigliato esportare il backup. Non sono inclusi audio automatico, riconoscimento vocale o sincronizzazione online.
+IMPORTANTE:
+I progressi sono salvati localmente nel browser. Prima dell'aggiornamento esporta un backup. Non sono inclusi audio automatico, riconoscimento vocale o sincronizzazione online. L'app non usa API o servizi a pagamento.
